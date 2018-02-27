@@ -1,7 +1,8 @@
 header {
   width: 100%;
-  background-color: #2c3e50;
-  height: 54px;
+  background-color: white;
+  height: 20px;
+  color: #2c3e50;
 }
 
 header ul {
@@ -29,13 +30,12 @@ header ul:after {
 
 footer {
   width: 100%;
-  background-color:#2c3e50;
-  padding: 20px 0 10px 0;
+  background-color:#ad055c;
   color: white;
   margin: auto;
-  padding-bottom: 10px;
   font-size: 12px;
   position: absolute;
+  line-height:10px;
   bottom: 0;
 }
 

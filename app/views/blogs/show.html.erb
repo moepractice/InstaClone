@@ -1,4 +1,11 @@
-<h1>ブログ詳細画面</h1>
+<h2>Tweet</h2>
 <p>タイトル: <%= @blog.title %></p>
-<p>タイトル: <%= @blog.email %></p>
-<p>内容: <%= @blog.content %></p>
+<p>Email   : <%= @blog.email %></p>
+<p>内容    : <%= @blog.content %></p>
+
+<%= form_with(model: @blog, url: new_blog_path, local: true, method: 'get') do |form| %>
+  <%= form.hidden_field :title %>
+    <%= form.hidden_field :email %>
+  <%= form.hidden_field :content %>
+  <%= form.submit "もどる" ,name: 'back'%>
+<% end %>
