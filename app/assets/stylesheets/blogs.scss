@@ -43,6 +43,11 @@ ul{
 h1,h2,h3,h4,h5{
     border-style:dotted;
     border-width:1px;
+    border-style:none;
+}
+
+p{
+    border-style:none;
 }
 
 h1{
@@ -64,7 +69,6 @@ h2{
 }
 
 div,p{
-    border-style:dotted;
     border-width:1px;
 }
 
@@ -94,6 +98,7 @@ div.blog-panel{
     height: 150px;
     margin: 15px 0;
     padding: 0;
+    border-style:groove;
 }
 
 .btn-default{
@@ -102,6 +107,7 @@ div.blog-panel{
 
 div.container-fluid{
     background-color: #f3dfef;
+    border-style:none;
 }
 
 div.container{
@@ -116,9 +122,13 @@ p.about{
 
 .btn-info{
     margin-top:70px;
+    margin-bottom:50px;
     background-color:#f37575;
     border-color:#f37575;
 }
 
-
+input{
+    border-radius: 10px;
+    box-shadow: inset 1px 4px 9px -6px rgba(0,0,0,0.5);
+}
 

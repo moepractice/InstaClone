@@ -5,7 +5,6 @@ ActiveRecord::Schema.define(version: 20180225084558) do
 
   create_table "blogs", force: :cascade do |t|
     t.string "title"
-    t.string "email"
     t.text "content"
   end
 
