@@ -4,7 +4,6 @@ ActiveRecord::Schema.define(version: 20180225084558) do
   enable_extension "plpgsql"
 
   create_table "blogs", force: :cascade do |t|
-    t.string "title"
     t.text "content"
   end
 
