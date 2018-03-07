@@ -1,4 +1,5 @@
 class BlogsController < ApplicationController
+  before_action :require_login
   before_action :set_blog, only:[:show, :edit, :update, :destroy]
   
   def index
@@ -47,6 +48,13 @@ class BlogsController < ApplicationController
   def destroy
     @blog.destroy
     redirect_to blogs_path, notice:"ブログを削除しました！"
+  end
+  
+  def require_login
+    unless logged_in?
+    flash[:error] = "Loginしてね！"
+    redirect_to new_session_path
+    end
   end
   
   private
