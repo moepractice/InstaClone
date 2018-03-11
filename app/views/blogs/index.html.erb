@@ -29,9 +29,7 @@
 <section class="col-md-offset-1 col-md-5 col-md-offset-6 about">
   <h2>About App</h2>
     <p class="about">
-     Twitter作成課題のサンプルアプリです<br>
-     Bootstrapがあるとめっちゃ楽に作れてたのぴい（・γ・）
-    </p>
+     Twitter作成課題のサンプルアプリです</p>
 </section>
 
 <div id="new-blog-link">
@@ -39,20 +37,23 @@
 </div>
   <br>
   <div class="container">
-    <% @blogs.each do |blog| %>
-      
-        <div class="col-sm-6 col-md-4">
-          <div class="thumbnail">
-            <img src="/assets/banner.png" alt="...">
-            <div class="caption">
-             <p><%= blog.content %></p>
-               <div class="blog-links">
-                 <p><%= link_to 'Show', blog, class: 'btn btn-success' %>
-                 <%= link_to 'Edit', edit_blog_path(blog), class: 'btn btn-warning' %>
-                 <%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></p>
-               </div>
-            </div>
-        </div>
-     </div>
+<% @blogs.each do |blog| %>
+  <div class="col-sm-6 col-md-4">
+  <div class="thumbnail">
+  <img src="/assets/banner.png" alt="...">
+  <div class="caption">
+  <p><%= blog.content %></p>
+  <div class="blog-links">
+    <%if blog.user_id == current_user.id %>
+      <%= link_to 'Show', blog, class: 'btn btn-success' %>
+      <%= link_to 'Edit', edit_blog_path(blog), class: 'btn btn-warning' %>
+      <%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></p>
+    <% else %>
+      <%= link_to 'Show', blog, class: 'btn btn-success' %>
+    <% end %>
+  </div>
+  </div>
+  </div>
+  </div>
   <% end %>
 </div>

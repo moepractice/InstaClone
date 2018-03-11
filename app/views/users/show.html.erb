@@ -2,6 +2,16 @@
 
 <p>メールアドレス: <%= @user.email %></p>
 
+<h2>お気に入り一覧</h2>
+
+<h3>内容</h3>
+
+<% @favorites.each do |favorite| %>
+    <% favorite.user.id == current_user.id %>
+    <%= favorite.blog.content %>
+<% end %>
+
+<br>
 <div id="new-blog-link">
     <%= link_to 'tweetページへ',blogs_path,class: ' col-md-offset-2 col-md-1  col-md-offset-9 btn btn-info' %>
 </div>
