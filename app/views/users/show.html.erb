@@ -8,7 +8,7 @@
 
 <% @favorites.each do |favorite| %>
     <% favorite.user.id == current_user.id %>
-    <%= favorite.blog.content %>
+    <%= favorite.content %>
 <% end %>
 
 <br>
