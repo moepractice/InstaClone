@@ -2,13 +2,16 @@
 
 <p>メールアドレス: <%= @user.email %></p>
 
+
 <h2>お気に入り一覧</h2>
 
 <h3>内容</h3>
 
 <% @favorites.each do |favorite| %>
     <% favorite.user.id == current_user.id %>
-    <%= favorite.content %>
+    <p><%= favorite.content %></p>
+    <p><%= image_tag(favorite.image_url) if favorite.image.present?%></p>
+    <br>
 <% end %>
 
 <br>

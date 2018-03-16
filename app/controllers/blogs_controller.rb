@@ -17,6 +17,7 @@ class BlogsController < ApplicationController
   def create
     @blog = Blog.new(blog_params)
     @blog.user_id = current_user.id
+    @blog.image.retrieve_from_cache!(params[:cache][:image]) if params[:cache][:image].present?
     if @blog.save
       redirect_to blogs_path, notice: "ブログを作成しました！"
     else
@@ -35,6 +36,7 @@ class BlogsController < ApplicationController
   
   def update
     @blog = Blog.find(params[:id])
+    @blog.image.retrieve_from_cache!(params[:cache][:image]) if params[:cache][:image].present?
     if @blog.update(blog_params)
       redirect_to blogs_path, notice: "ブログを編集しました！"
     else
@@ -46,6 +48,11 @@ class BlogsController < ApplicationController
     @blog = Blog.new(blog_params)
     @blog.user_id = current_user.id
     render :new if @blog.invalid?
+     @blog.user_id = current_user.id
+      unless params[:cache] == nil
+      @blog.image.retrieve_from_cache! params[:cache][:image] 
+      end
+    render :new if @mizutter.invalid?
   end
   
   def destroy
@@ -62,7 +69,7 @@ class BlogsController < ApplicationController
   
   private
   def blog_params
-    params.require(:blog).permit(:content)
+    params.require(:blog).permit(:content, :image, :image_cache)
   end
   
   def set_blog

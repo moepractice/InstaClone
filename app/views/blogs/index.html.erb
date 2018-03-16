@@ -27,9 +27,8 @@
 </section>
 
 <section class="col-md-offset-1 col-md-5 col-md-offset-6 about">
-  <h2>About App</h2>
-    <p class="about">
-     Twitter作成課題のサンプルアプリです</p>
+<h2>About App</h2>
+  <p class="about">Twitter作成課題のサンプルアプリです</p>
 </section>
 
 <div id="new-blog-link">
@@ -37,12 +36,16 @@
 </div>
   <br>
   <div class="container">
-<% @blogs.each do |blog| %>
+    <% @blogs.each do |blog| %>
+  
   <div class="col-sm-6 col-md-4">
+  
   <div class="thumbnail">
   <img src="/assets/banner.png" alt="...">
   <div class="caption">
   <p><%= blog.content %></p>
+  <p><%= image_tag(blog.image_url) if blog.image.present?%></p>
+  
   <div class="blog-links">
     <%if blog.user_id == current_user.id %>
       <%= link_to 'Show', blog, class: 'btn btn-success' %>

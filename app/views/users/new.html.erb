@@ -18,6 +18,12 @@
   <%= f.label :email %>
   <%= f.email_field :email %>
 <br>
+ <div class="field">
+    <%= f.label :icon %>
+    <%= f.file_field :image, id: :feed_image %>
+    <%= f.hidden_field :image_cache %>
+ </div>
+<br>
   <%= f.label :password %>
   <%= f.password_field :password %>
 <br>

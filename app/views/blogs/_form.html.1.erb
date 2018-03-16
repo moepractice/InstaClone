@@ -15,7 +15,11 @@
     <%= form.label :content %>
     <%= form.text_field :content %>
   </div>
-  <%= form.submit %>
+   
+   <div class="blog_image"><%= image_tag(@blog.image.url) if @blog.image.present? %></div>
+   <%= hidden_field_tag :"cache[image]", @blog.image.cache_name%>
+   
+   <%= form.submit %>
 <% end %>
 
 <%= link_to "ブログ一覧画面", blogs_path %>

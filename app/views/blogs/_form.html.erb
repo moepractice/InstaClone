@@ -11,6 +11,12 @@
     </div>
   <% end %>
 
+  <div class="blog_image">
+    <%= form.label :image %>
+    <%= form.file_field :image, id: :feed_image %>
+    <%= form.hidden_field :image_cache %>
+  </div>
+
   <div class="blog_title">
     <%= form.label :content %>
     <%= form.text_field :content %>

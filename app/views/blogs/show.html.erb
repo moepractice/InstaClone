@@ -2,6 +2,7 @@
 <div class="input">
 <p>ユーザー: <%= @blog.user.name %></p>
 <p>内容    : <%= @blog.content %></p>
+<p>Image: <%= image_tag @blog.image %></p>
 
 <p id="notice"><%= notice %></p>
 <% if @blog.user == current_user %>
