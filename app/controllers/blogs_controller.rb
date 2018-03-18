@@ -52,7 +52,7 @@ class BlogsController < ApplicationController
       unless params[:cache] == nil
       @blog.image.retrieve_from_cache! params[:cache][:image] 
       end
-    render :new if @mizutter.invalid?
+    render :new if @blog.invalid?
   end
   
   def destroy
