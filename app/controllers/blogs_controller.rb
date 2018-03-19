@@ -58,7 +58,6 @@ class BlogsController < ApplicationController
       unless params[:cache] == nil
       @blog.image.retrieve_from_cache! params[:cache][:image] 
       end
-    render :new if @blog.invalid?
   end
   
   def destroy
@@ -75,11 +74,11 @@ class BlogsController < ApplicationController
   
   private
   def blog_params
-    params.require(:blog).permit(:content, :image, :image_cache)
+    params.require(:blog).permit(:content, :user_id, :image)
   end
   
   def set_blog
-     @blog = Blog.find(params[:id])
+     @blog = Blog.find(params[:user_id])
   end
   
 end

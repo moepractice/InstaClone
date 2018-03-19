@@ -16,6 +16,7 @@ ul{
     background-color:#012F4B;
     color:#fff;
 }
+
 .menu li {
     padding:5% 10%;
     text-align:center;
@@ -157,5 +158,17 @@ thumbnali.caption{
     width:300px;
     height:300px;
     text-align:center;
+    margin:auto;
+}
+
+new-blog-link.btn btn-info{
+    text-alian:center;
+}
+
+#error_explanation{
+    margin:auto;
+}
+
+.field_with_errors{
     margin:auto;
 }
