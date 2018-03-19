@@ -17,7 +17,11 @@ class BlogsController < ApplicationController
   def create
     @blog = Blog.new(blog_params)
     @blog.user_id = current_user.id
-    @blog.image.retrieve_from_cache!(params[:cache][:image]) if params[:cache][:image].present?
+   
+    unless params[:cache] == nil
+      @blog.image.retrieve_from_cache! params[:cache][:image]
+    end
+    
     if @blog.save
       redirect_to blogs_path, notice: "ブログを作成しました！"
     else

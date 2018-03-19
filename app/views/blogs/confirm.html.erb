@@ -1,12 +1,13 @@
 <h2>Sending.............</h2>
 
 <%= form_with(model: @blog, url: blogs_path, local: true) do |form| %>
+  <% if @blog.image.present? %>
+      <%= image_tag(@blog.image.url) %>
+      <%= hidden_field_tag :"cache[image]",@blog.image.cache_name %>
+    <% end %>
+  
   <%= form.hidden_field :content %>
-
   <p>本文    :<%= @blog.content %></p>
-  <%= image_tag(@blog.image.url) %>
-  <%= hidden_field_tag :"cache[image]",@blog.image.cache_name %>
-  <br>
   <%= form.submit  "登録" %>
 <% end %>
 

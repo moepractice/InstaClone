@@ -125,7 +125,7 @@ p.about{
     margin-bottom:50px;
     background-color:#f37575;
     border-color:#f37575;
-     display:inline-block;
+    display:inline-block;
 }
 
 input{
@@ -139,4 +139,19 @@ div.blog_image{
 
 div.field{
     display:inline-block;    
+}
+
+img{
+   width:auto;
+   height:auto;
+   max-width:100%;
+   max-height:100%;
+   position:relative;
+}
+
+div.caption{
+    position:relative;
+    width:350px;
+    height:350px;
+    text-align:center;
 }
