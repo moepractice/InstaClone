@@ -5,3 +5,4 @@ class ContactMailer < ApplicationMailer
     mail to:"yajima_moe@nexway.co.jp",subject: "お問い合わせの確認メール"
 　end
 end
+end
