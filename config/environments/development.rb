@@ -54,5 +54,5 @@ Rails.application.configure do
   
   
   config.action_mailer.default_url_options = { host: 'bootstrap-moechanta.c9users.io:8080/' }
-  config.action_mailer.delivery_method = :letter_opener
+  config.action_mailer.delivery_method = ENV['USER'] == 'vagrant' ? :letter_opener_web : :letter_opener
 end

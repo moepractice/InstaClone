@@ -38,6 +38,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '3.1.11'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'letter_opener_web'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -63,7 +64,6 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'better_errors'
   gem 'binding_of_caller'
-  gem 'letter_opener_web'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
