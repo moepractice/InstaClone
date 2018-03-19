@@ -35,7 +35,6 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '3.1.11'
 gem 'carrierwave'
 gem 'mini_magick'
-#  gem 'letter_opener_web'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
