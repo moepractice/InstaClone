@@ -40,7 +40,9 @@ class BlogsController < ApplicationController
   
   def update
     @blog = Blog.find(params[:id])
-    @blog.image.retrieve_from_cache!(params[:cache][:image]) if params[:cache][:image].present?
+    unless params[:cache] == nil
+      @blog.image.retrieve_from_cache! params[:cache][:image]
+    end
     if @blog.update(blog_params)
       redirect_to blogs_path, notice: "ブログを編集しました！"
     else
