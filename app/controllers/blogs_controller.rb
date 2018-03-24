@@ -23,7 +23,8 @@ class BlogsController < ApplicationController
     end
     
     if @blog.save
-      redirect_to blogs_path, notice: "ブログを作成しました！"
+      ContactMailer.contact_mail(@contact).deliver
+      redirect_to blogs_path, notice: "作成！"
     else
       render 'new'
     end
@@ -44,7 +45,7 @@ class BlogsController < ApplicationController
       @blog.image.retrieve_from_cache! params[:cache][:image]
     end
     if @blog.update(blog_params)
-      redirect_to blogs_path, notice: "ブログを編集しました！"
+      redirect_to blogs_path, notice: "編集済み"
     else
       render 'edit'
     end
