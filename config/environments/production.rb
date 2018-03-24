@@ -85,6 +85,17 @@ Rails.application.configure do
     logger.formatter = config.log_formatter
     config.logger    = ActiveSupport::TaggedLogging.new(logger)
   end
+  
+  config.action_mailer.default_url_options = { host: 'floating-ravine-95553' }
+ActionMailer::Base.delivery_method = :smtp
+ActionMailer::Base.smtp_settings ={
+  user_name: ENV['app89260038@heroku.com'],
+  password: ENV['gnyq7tzw2936'],
+  domain: "heroku.com",
+  address: "smtp.sendgrid.net",
+  port: 587,
+  authentication: :plain,
+  enable_starttls_auto: true}
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
