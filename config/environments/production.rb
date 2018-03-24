@@ -86,11 +86,11 @@ Rails.application.configure do
     config.logger    = ActiveSupport::TaggedLogging.new(logger)
   end
   
-  config.action_mailer.default_url_options = { host: 'floating-ravine-95553' }
+  config.action_mailer.default_url_options = { host: 'floating-ravine-95553.herokuapp.com' }
 ActionMailer::Base.delivery_method = :smtp
 ActionMailer::Base.smtp_settings ={
-  user_name: ENV['app89260038@heroku.com'],
-  password: ENV['gnyq7tzw2936'],
+  user_name: ENV['SENDGRID_USERNAME'],
+  password: ENV['SENDGRID_PASSWORD'],
   domain: "heroku.com",
   address: "smtp.sendgrid.net",
   port: 587,
