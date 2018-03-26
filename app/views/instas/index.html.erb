@@ -14,7 +14,7 @@
     <div id="gnavi" class="collapse navbar-collapse">
       <ul class="nav navbar-nav text-uppercase ml-auto">
         <li class ="nav-item">
-          <%= link_to 'tweet!!', new_blog_path %></li>
+          <%= link_to 'tweet!!', new_insta_path %></li>
       </ul>
     </div>
   </div>
@@ -31,28 +31,28 @@
   <p class="about">Twitter作成課題のサンプルアプリです</p>
 </section>
 
-<div id="new-blog-link">
-    <%= link_to 'tweet!!', new_blog_path,class: ' col-md-offset-2 col-md-1  col-md-offset-9 btn btn-info' %>
+<div id="new-insta-link">
+    <%= link_to 'tweet!!', new_insta_path,class: ' col-md-offset-2 col-md-1  col-md-offset-9 btn btn-info' %>
 </div>
   <br>
   <div class="container">
-    <% @blogs.each do |blog| %>
+    <% @instas.each do |insta| %>
      <div class="PhotoBox" class="col-sm-6 col-md-3">
       <div class="col-sm-6 col-md-4">
         <div class="thumbnail">
           <img src="/assets/banner.png" alt="...">
           <div class="caption">
              
-        <p><%= blog.content %></p>
-        <p><%= image_tag(blog.image_url) if blog.image.present?%></p>
+        <p><%= insta.content %></p>
+        <p><%= image_tag(insta.image_url) if insta.image.present?%></p>
   
-  <div class="blog-links">
-    <%if blog.user_id == current_user.id %>
-      <%= link_to 'Show', blog, class: 'btn btn-success' %>
-      <%= link_to 'Edit', edit_blog_path(blog), class: 'btn btn-warning' %>
-      <%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></p>
+  <div class="insta-links">
+    <%if insta.user_id == current_user.id %>
+      <%= link_to 'Show', insta, class: 'btn btn-success' %>
+      <%= link_to 'Edit', edit_insta_path(insta), class: 'btn btn-warning' %>
+      <%= link_to 'Destroy', insta, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></p>
     <% else %>
-      <%= link_to 'Show', blog, class: 'btn btn-success' %>
+      <%= link_to 'Show', insta, class: 'btn btn-success' %>
     <% end %>
   </div>
   </div>

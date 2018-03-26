@@ -1,4 +1,4 @@
-class Blog < ApplicationRecord
+class insta < ApplicationRecord
     validates :content, presence: true,length: { in: 1..140 }
     
     belongs_to :user

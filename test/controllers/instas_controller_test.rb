@@ -1,8 +1,8 @@
 require 'test_helper'
 
-class BlogsControllerTest < ActionDispatch::IntegrationTest
+class instasControllerTest < ActionDispatch::IntegrationTest
   test "should get index" do
-    get blogs_index_url
+    get instas_index_url
     assert_response :success
   end
 
