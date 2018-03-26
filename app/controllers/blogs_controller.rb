@@ -3,21 +3,21 @@ class BlogsController < ApplicationController
   before_action :set_blog, only:[:show, :edit, :update, :destroy]
   
   def index
-    @blogs = blog.all
-    @blog = blog.new
+    @blogs = Blog.all
+    @blog = Blog.new
     @user = current_user
   end
   
   def new
     if params[:back]
-      @blog = blog.new(blog_params)
+      @blog = Blog.new(blog_params)
     else
-      @blog = blog.new
+      @blog = Blog.new
     end
   end
   
   def create
-    @blog = blog.new(blog_params)
+    @blog = Blog.new(blog_params)
     @blog.user_id = current_user.id
    
     unless params[:cache] == nil
@@ -26,22 +26,23 @@ class BlogsController < ApplicationController
     
     if @blog.save
       ContactMailer.contact_mail(@blog).deliver
+      redirect_to blogs_path
     else
       render 'new'
     end
   end
   
   def show
-    @blog = blog.find(params[:id])
+    @blog = Blog.find(params[:id])
     @favorite = current_user.favorites.find_by(blog_id: @blog.id)
   end
   
   def edit
-    @blog = blog.find(params[:id])
+    @blog = Blog.find(params[:id])
   end
   
   def update
-    @blog = blog.find(params[:id])
+    @blog = Blog.find(params[:id])
     unless params[:cache] == nil
       @blog.image.retrieve_from_cache! params[:cache][:image]
     end
@@ -54,7 +55,7 @@ class BlogsController < ApplicationController
   end
   
   def confirm
-    @blog = blog.new(blog_params)
+    @blog = Blog.new(blog_params)
     @blog.user_id = current_user.id
     render :new if @blog.invalid?
      @blog.user_id = current_user.id

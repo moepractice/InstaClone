@@ -15,9 +15,9 @@ class UsersController < ApplicationController
     
     def show
       @user = User.find(params[:id])
-       @favorites = @user.favorite_instas
+       @favorites = @user.favorite_blogs
      # @favorites = current_user.favorites
-      # @favorite = current_user.favorites.find_by(insta_id: @insta.id) if current_user.favorites
+      # @favorite = current_user.favorites.find_by(blog_id: @blog.id) if current_user.favorites
     end
     
     private
