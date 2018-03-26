@@ -1,27 +1,27 @@
-<%= form_with(model: @blog, local: true ,url: choose_new_or_edit) do |form| %>
-  <% if @blog.errors.any? %>
+<%= form_with(model: @insta, local: true ,url: choose_new_or_edit) do |form| %>
+  <% if @insta.errors.any? %>
     <div id="error_explanation">
-      <h2><%= @blog.errors.count %>件のエラーがあります。</h2>
+      <h2><%= @insta.errors.count %>件のエラーがあります。</h2>
       <ul>
 
-      <% @blog.errors.full_messages.each do |msg| %>
+      <% @insta.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
       </ul>
     </div>
   <% end %>
 
-  <div class="blog_image">
+  <div class="insta_image">
     <%= form.label :image %>
     <%= form.file_field :image, id: :feed_image %>
     <%= form.hidden_field :image_cache %>
   </div>
 
-  <div class="blog_title">
+  <div class="insta_title">
     <%= form.label :content %>
     <%= form.text_field :content %>
   </div>
   <%= form.submit %>
 <% end %>
 
-<%= link_to "Back", blogs_path %>
+<%= link_to "Back", instas_path %>

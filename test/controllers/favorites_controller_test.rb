@@ -6,8 +6,8 @@ class FavoritesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should get blog_id:integer" do
-    get favorites_blog_id:integer_url
+  test "should get insta_id:integer" do
+    get favorites_insta_id:integer_url
     assert_response :success
   end
 

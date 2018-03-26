@@ -3,15 +3,15 @@ Rails.application.routes.draw do
   resources :contacts
   resources :feeds
   
-  resources :blogs do
+  resources :instas do
      collection do
       post :confirm
     end
   end
   
-  root to: 'blogs#index'
-  root to: 'blogs#edit'
-  root to: 'blogs#new'
+  root to: 'instas#index'
+  root to: 'instas#edit'
+  root to: 'instas#new'
   
   resources :sessions, only: [:new, :create, :destroy]
   resources :users

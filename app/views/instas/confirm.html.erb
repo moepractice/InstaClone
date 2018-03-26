@@ -1,0 +1,19 @@
+<h2>Sending.............</h2>
+
+<%= form_with(model: @insta, url: instas_path, local: true) do |form| %>
+  <% if @insta.image.present? %>
+      <%= image_tag(@insta.image.url) %>
+      <%= hidden_field_tag :"cache[image]",@insta.image.cache_name %>
+    <% end %>
+  
+  <%= form.hidden_field :content %>
+  <p>本文    :<%= @insta.content %></p>
+  <%= form.submit  "登録" %>
+<% end %>
+
+<%= form_with(model: @insta, url: new_insta_path, local: true, method: 'get') do |form| %>
+  <%= form.hidden_field :content %>
+   <%= form.hidden_field :image %>
+  <%= form.submit "もどる" ,name: 'back'%>
+<% end %>
+
