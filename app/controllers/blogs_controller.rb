@@ -43,12 +43,14 @@ class BlogsController < ApplicationController
   
   def update
     @blog = Blog.find(params[:id])
+    
     unless params[:cache] == nil
       @blog.image.retrieve_from_cache! params[:cache][:image]
     end
     
     if 
       @blog.update(blog_params)
+      redirect_to blogs_path
     else
       render 'edit'
     end
@@ -82,7 +84,7 @@ class BlogsController < ApplicationController
   end
   
   def set_blog
-     @blog = blog.find(params[:user_id])
+     @blog = Blog.find(params[:id])
   end
   
 end
