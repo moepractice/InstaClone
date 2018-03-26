@@ -4,6 +4,7 @@ class BlogsController < ApplicationController
   
   def index
     @blogs = Blog.all
+    @blog = Blog.new
     @user = current_user
   end
   
@@ -24,8 +25,8 @@ class BlogsController < ApplicationController
     end
     
     if @blog.save
-      ContactMailer.contact_mail(@contact).deliver
-      redirect_to blogs_path, notice: "作成！"
+      ContactMailer.contact_mail(@blog).deliver
+      redirect_to blogs_path, notice: "送信完了！"
     else
       render 'new'
     end
