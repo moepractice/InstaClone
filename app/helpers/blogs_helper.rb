@@ -4,6 +4,7 @@ module BlogsHelper
       confirm_blogs_path
     elsif action_name == 'edit'
       blog_path
+      #エラー出るかも
     end
   end
 end
