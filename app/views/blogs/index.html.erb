@@ -4,17 +4,15 @@
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#gnavi">
-        <span class="sr-only">Bootstrap Test</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
+        <span class="sr-only">Moesta</span>
+        <span class="icon-bar"><%= link_to 'New Moesta', new_blog_path, class: 'btn btn-default' %>New Moesta</span>
       </button>
-      <a class="navbar-brand" href="#">Bootstrap</a>
+      <a class="navbar-brand" href="#">Moesta</a>
     </div>
     <div id="gnavi" class="collapse navbar-collapse">
       <ul class="nav navbar-nav text-uppercase ml-auto">
         <li class ="nav-item">
-          <%= link_to 'tweet!!', new_blog_path %></li>
+          <%= link_to 'New Moesta', new_blog_path, class: 'btn btn-default' %></li>
       </ul>
     </div>
   </div>
@@ -26,13 +24,8 @@
   <%= image_tag "moji2.png"%>
 </section>
 
-<section class="col-md-offset-1 col-md-5 col-md-offset-6 about">
-<h2>About App</h2>
-  <p class="about">Twitter作成課題のサンプルアプリです</p>
-</section>
-
 <div id="new-blog-link">
-    <%= link_to 'tweet!!', new_blog_path,class: ' col-md-offset-2 col-md-1  col-md-offset-9 btn btn-info' %>
+    <%= link_to 'New Moesta', new_blog_path,class: ' col-md-offset-2 col-md-1  col-md-offset-9 btn btn-info' %>
 </div>
   <br>
   <div class="container">
