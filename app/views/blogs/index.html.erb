@@ -3,54 +3,53 @@
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
+      <a class="navbar-brand" href="#">
+        <%= image_tag "moestagram.png"%>
+      </a>
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#gnavi">
         <span class="sr-only">Moesta</span>
         <span class="icon-bar"><%= link_to 'New Moesta', new_blog_path, class: 'btn btn-default' %>New Moesta</span>
       </button>
-      <a class="navbar-brand" href="#">Moesta</a>
-    </div>
-    <div id="gnavi" class="collapse navbar-collapse">
-      <ul class="nav navbar-nav text-uppercase ml-auto">
-        <li class ="nav-item">
-          <%= link_to 'New Moesta', new_blog_path, class: 'btn btn-default' %></li>
-      </ul>
     </div>
   </div>
 </nav>
 </header>
 
-<div class ="content cleafix">
-<section class="main-header">
-  <%= image_tag "moji2.png"%>
+<section class="col-md-offset-1 col-md-5 col-md-offset-6 about">
 </section>
 
 <div id="new-blog-link">
     <%= link_to 'New Moesta', new_blog_path,class: ' col-md-offset-2 col-md-1  col-md-offset-9 btn btn-info' %>
 </div>
   <br>
-  <div class="container">
+  <div class="container ">
     <% @blogs.each do |blog| %>
      <div class="PhotoBox" class="col-sm-6 col-md-3">
       <div class="col-sm-6 col-md-4">
         <div class="thumbnail">
-          <img src="/assets/banner.png" alt="...">
           <div class="caption">
-             
-        <p><%= blog.content %></p>
-        <p><%= image_tag(blog.image_url) if blog.image.present?%></p>
-  
-  <div class="blog-links">
-    <%if blog.user_id == current_user.id %>
-      <%= link_to 'Show', blog, class: 'btn btn-success' %>
-      <%= link_to 'Edit', edit_blog_path(blog), class: 'btn btn-warning' %>
-      <%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></p>
-    <% else %>
-      <%= link_to 'Show', blog, class: 'btn btn-success' %>
-    <% end %>
-  </div>
-  </div>
-  </div>
-  </div>
-  </div>
+　　        <p><%= image_tag(blog.image_url) if blog.image.present?%></p>
+  　　　   　　<p><%= blog.content %></p>
+
+            <div class="blog-links">
+              <%if blog.user_id == current_user.id %>
+                <%= link_to 'Show', blog, class: 'btn btn-success' %>
+                <%= link_to 'Edit', edit_blog_path(blog), class: 'btn btn-warning' %>
+                <%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></p>
+              <% else %>
+                <% unless @blog.user == current_user %>
+                  <% if @favorite.present? %>
+                    <%= link_to 'Unlike', favorite_path(blog_id: blog.id), method: :delete, class: 'btn btn-primary' %>
+                  <% else %>
+                    <%= link_to '♡', favorites_path(blog_id: blog.id), method: :post, class: 'btn btn-danger' %>
+                  <% end %>
+                <% end %>
+                <%= link_to 'Show', blog, class: 'btn btn-success' %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   <% end %>
 </div>

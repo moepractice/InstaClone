@@ -1,4 +1,4 @@
-<h2>Tweet</h2>
+<h2>Moesta</h2>
 <div class="input">
 <p>ユーザー: <%= @blog.user.name %></p>
 <p>内容    : <%= @blog.content %></p>
@@ -11,9 +11,9 @@
 
 <% unless @blog.user == current_user %>
   <% if @favorite.present? %>
-    <%= link_to 'お気に入り解除', favorite_path(blog_id: @blog.id), method: :delete, class: 'btn btn-danger' %>
+    <%= link_to 'Unliked', favorite_path(blog_id: @blog.id), method: :delete, class: 'btn btn-primary' %>
   <% else %>
-    <%= link_to 'お気に入りする', favorites_path(blog_id: @blog.id), method: :post, class: 'btn btn-primary' %>
+    <%= link_to 'Like♡', favorites_path(blog_id: @blog.id), method: :post, class: 'btn btn-danger' %>
   <% end %>
 <% end %>
 

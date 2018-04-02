@@ -51,11 +51,6 @@ p{
     border-style:none;
 }
 
-h1{
-    background-color:#2c3e50;
-    color: white;
-}
-
 .about h2{
     text-align:left;
     background-color:white;
@@ -64,9 +59,10 @@ h1{
 }
 
 h2{
-    background-color:#f3dfef;
-    color: #333;
+    background-color:#286090;
+    color: white;
     margin-top: 0;
+    margin-bottom:20px;
 }
 
 div,p{
@@ -107,8 +103,9 @@ div.blog-panel{
 }
 
 div.container-fluid{
-    background-color: #f8caef;
+    background-color: #286090;
     border-style:none;
+    height:130px;
 }
 
 div.container{
@@ -124,9 +121,15 @@ p.about{
 .btn-info{
     margin-top:70px;
     margin-bottom:50px;
-    background-color:#f37575;
-    border-color:#f37575;
+    background-color: white;
+    border-color: white;
     display:inline-block;
+}
+
+.btn-success, .btn-warning, .btn-danger{
+    background-color:white;
+    border-color:black;
+    color:black;
 }
 
 input{
@@ -171,4 +174,11 @@ new-blog-link.btn btn-info{
 
 .field_with_errors{
     margin:auto;
+}
+
+a.navbar-brand.img{
+   width:auto;
+   height:auto;
+   max-width:300%;
+   max-height:300%;
 }

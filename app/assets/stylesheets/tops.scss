@@ -30,7 +30,7 @@ header ul:after {
 
 footer {
   width: 100%;
-  background-color:#ad055c;
+  background-color:#555;
   color: white;
   margin: auto;
   font-size: 12px;
@@ -50,18 +50,17 @@ body {
 }
 
 .main-header{
-    padding-bottom: 23%;
+    padding-bottom: 13%;
     width: 100%;
     background-size: cover;
-    background-image: url(/assets/header.jpg);
     background-attachment: fixed;
 }
 
 .main-header img {
     display: block;
     margin: 0 auto;
-    width: 25%;
-    padding-top: 15%;
+    width: 80%;
+    padding-top: 30%;
 }
 
 .text-uppercase{

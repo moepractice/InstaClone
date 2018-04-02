@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   root to: 'blogs#index'
   root to: 'blogs#edit'
   root to: 'blogs#new'
-  
+
   resources :sessions, only: [:new, :create, :destroy]
   resources :users
   resources :favorites, only: [:create, :destroy]
