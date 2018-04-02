@@ -25,7 +25,6 @@ class BlogsController < ApplicationController
     end
     
     if @blog.save
-      ContactMailer.contact_mail(@blog).deliver
       redirect_to blogs_path
     else
       render 'new'
@@ -84,6 +83,7 @@ class BlogsController < ApplicationController
   end
   
   def set_blog
+    binding.pry
      @blog = Blog.find(params[:id])
   end
   

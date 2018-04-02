@@ -1,5 +1,5 @@
 class Blog < ApplicationRecord
-    validates :content, presence: true,length: { in: 1..140 }
+    validates :content, presence: true,length: { in: 1..30 }
     
     belongs_to :user
     validates :user_id, presence: true
